@@ -10,6 +10,7 @@
 		044D2837297ED0A900FDB9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D2836297ED0A900FDB9E3 /* AppDelegate.swift */; };
 		044D2840297ED0AA00FDB9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044D283F297ED0AA00FDB9E3 /* Assets.xcassets */; };
 		044D2843297ED0AA00FDB9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044D2841297ED0AA00FDB9E3 /* LaunchScreen.storyboard */; };
+		33B6AA12297ED50C00189E9C /* jonibek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B6AA11297ED50C00189E9C /* jonibek.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		044D283F297ED0AA00FDB9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044D2842297ED0AA00FDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044D2844297ED0AA00FDB9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33B6AA11297ED50C00189E9C /* jonibek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = jonibek.swift; path = ../../../jonibek.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		044D284B297ED0CF00FDB9E3 /* Jonibek */ = {
 			isa = PBXGroup;
 			children = (
+				33B6AA11297ED50C00189E9C /* jonibek.swift */,
 			);
 			path = Jonibek;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B6AA12297ED50C00189E9C /* jonibek.swift in Sources */,
 				044D2837297ED0A900FDB9E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
