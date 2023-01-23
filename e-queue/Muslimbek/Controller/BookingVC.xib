@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookingVC" customModule="E_Queue" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmBtn" destination="RSa-yd-ZSH" id="N1E-Nz-dG5"/>
+                <outlet property="daysColView" destination="FG8-6O-eRk" id="q4r-YT-OQh"/>
+                <outlet property="imageView" destination="S4t-5z-8kf" id="7eT-Cx-lHy"/>
+                <outlet property="timeColView" destination="BLS-Zh-kQA" id="27i-eZ-fdC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S4t-5z-8kf">
+                    <rect key="frame" x="20" y="68" width="374" height="161.5"/>
+                    <color key="backgroundColor" systemColor="systemMintColor"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edA-xk-7Sa">
+                    <rect key="frame" x="349" y="78" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="5kS-aR-Eyv"/>
+                        <constraint firstAttribute="width" secondItem="edA-xk-7Sa" secondAttribute="height" id="ive-wj-mfj"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" image="heart" catalog="system" title="">
+                        <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="likeBtnPressed:" destination="-1" eventType="touchUpInside" id="Stx-oT-i11"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sd-t8-iIC">
+                    <rect key="frame" x="304" y="78" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="7cP-Nr-feD"/>
+                        <constraint firstAttribute="width" secondItem="9sd-t8-iIC" secondAttribute="height" id="8wv-ya-TS7"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" image="location.circle" catalog="system" title="">
+                        <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="locationBtnPressed:" destination="-1" eventType="touchUpInside" id="0NM-gm-AWT"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xalq Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qET-5b-Snw">
+                    <rect key="frame" x="20" y="249.5" width="136.5" height="36"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3f-dZ-zbU">
+                    <rect key="frame" x="203.5" y="249.5" width="190.5" height="36"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Осталось 12 талонов" cornerStyle="capsule">
+                        <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                    </buttonConfiguration>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Покупка валюты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XX-fW-LaU">
+                    <rect key="frame" x="20" y="295.5" width="138.5" height="20.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <color key="textColor" systemColor="systemIndigoColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7qv-0V-eh0">
+                    <rect key="frame" x="20" y="326" width="200" height="21"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Oy-Bn-6I2">
+                            <rect key="frame" x="0.0" y="1" width="21" height="18.5"/>
+                            <color key="tintColor" systemColor="systemGray2Color"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3Oy-Bn-6I2" secondAttribute="height" id="Rcv-PQ-7LA"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пн-Пт с 9:00 до 16:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btv-A9-4pb">
+                            <rect key="frame" x="25" y="0.0" width="175" height="21"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" systemColor="systemGray2Color"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Понедельник, 21 апреля" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiE-l2-zI3">
+                    <rect key="frame" x="20" y="367" width="229" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-6O-eRk">
+                    <rect key="frame" x="0.0" y="411" width="414" height="70"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="u4z-0G-2dj"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z7r-Ey-Hce">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BLS-Zh-kQA">
+                    <rect key="frame" x="20" y="501" width="374" height="266"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BZv-yK-SDx">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSa-yd-ZSH">
+                    <rect key="frame" x="20" y="787" width="374" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="6RN-nh-vjt"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Забронировать" cornerStyle="capsule"/>
+                    <connections>
+                        <action selector="confirmBtnPressed:" destination="-1" eventType="touchUpInside" id="z37-Iq-Je0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3XX-fW-LaU" firstAttribute="top" secondItem="qET-5b-Snw" secondAttribute="bottom" constant="10" id="0zM-kg-p49"/>
+                <constraint firstItem="FG8-6O-eRk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1qV-Mh-vbj"/>
+                <constraint firstItem="7qv-0V-eh0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3Iq-WR-vdg"/>
+                <constraint firstItem="R3f-dZ-zbU" firstAttribute="height" secondItem="qET-5b-Snw" secondAttribute="height" id="6LH-Fm-a1z"/>
+                <constraint firstItem="RSa-yd-ZSH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="863-80-0r8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S4t-5z-8kf" secondAttribute="trailing" constant="20" id="8iH-tF-Jhj"/>
+                <constraint firstItem="R3f-dZ-zbU" firstAttribute="top" secondItem="S4t-5z-8kf" secondAttribute="bottom" constant="20" id="KI7-lT-UP9"/>
+                <constraint firstItem="edA-xk-7Sa" firstAttribute="trailing" secondItem="S4t-5z-8kf" secondAttribute="trailing" constant="-10" id="MpN-O8-3JP"/>
+                <constraint firstItem="9sd-t8-iIC" firstAttribute="top" secondItem="S4t-5z-8kf" secondAttribute="top" constant="10" id="Owd-xn-xje"/>
+                <constraint firstItem="S4t-5z-8kf" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.18" id="TB9-qk-KBT"/>
+                <constraint firstItem="qET-5b-Snw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dJV-mr-TQ7"/>
+                <constraint firstItem="RSa-yd-ZSH" firstAttribute="top" secondItem="BLS-Zh-kQA" secondAttribute="bottom" constant="20" id="gFS-yP-ykS"/>
+                <constraint firstItem="3XX-fW-LaU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gKd-cV-YEZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RSa-yd-ZSH" secondAttribute="trailing" constant="20" id="gfF-aw-lwq"/>
+                <constraint firstItem="qET-5b-Snw" firstAttribute="top" secondItem="S4t-5z-8kf" secondAttribute="bottom" constant="20" id="hVn-ti-yaI"/>
+                <constraint firstItem="S4t-5z-8kf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kmc-aS-Iki"/>
+                <constraint firstItem="S4t-5z-8kf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="kpm-YP-eGT"/>
+                <constraint firstItem="BLS-Zh-kQA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lRr-ip-q4K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BLS-Zh-kQA" secondAttribute="trailing" constant="20" id="llY-fg-VKh"/>
+                <constraint firstItem="oiE-l2-zI3" firstAttribute="top" secondItem="7qv-0V-eh0" secondAttribute="bottom" constant="20" id="m4f-em-xG5"/>
+                <constraint firstItem="oiE-l2-zI3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nfo-xF-DHu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FG8-6O-eRk" secondAttribute="trailing" id="pRx-O2-Cnn"/>
+                <constraint firstItem="BLS-Zh-kQA" firstAttribute="top" secondItem="FG8-6O-eRk" secondAttribute="bottom" constant="20" id="qr1-G3-bYY"/>
+                <constraint firstItem="edA-xk-7Sa" firstAttribute="top" secondItem="S4t-5z-8kf" secondAttribute="top" constant="10" id="qvL-gW-Vx8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RSa-yd-ZSH" secondAttribute="bottom" constant="20" id="rz2-sa-b6f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R3f-dZ-zbU" secondAttribute="trailing" constant="20" id="wNa-2k-ZzV"/>
+                <constraint firstItem="FG8-6O-eRk" firstAttribute="top" secondItem="oiE-l2-zI3" secondAttribute="bottom" constant="20" id="wXZ-Lt-8Qj"/>
+                <constraint firstItem="9sd-t8-iIC" firstAttribute="trailing" secondItem="edA-xk-7Sa" secondAttribute="leading" constant="-10" id="wfb-Fx-ZfF"/>
+                <constraint firstItem="7qv-0V-eh0" firstAttribute="top" secondItem="3XX-fW-LaU" secondAttribute="bottom" constant="10" id="yun-TZ-ALp"/>
+            </constraints>
+            <point key="canvasLocation" x="115.94202898550725" y="19.419642857142858"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="location.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
