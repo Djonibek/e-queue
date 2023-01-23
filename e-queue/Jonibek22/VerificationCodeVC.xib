@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerificationCodeVC" customModule="electron_queue_system" customModuleProvider="target">
+            <connections>
+                <outlet property="otpFieldView" destination="VZg-Q1-kYH" id="cj3-8n-GbO"/>
+                <outlet property="reSendBtn" destination="5iS-kg-uDK" id="ULX-fa-2Uj"/>
+                <outlet property="timerLabel" destination="KcA-CU-ErS" id="C8N-KY-I7n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b98-EQ-GyQ">
+                    <rect key="frame" x="84.000000000000014" y="139" width="225.33333333333337" height="56"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверка кода" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdO-IP-cfz">
+                            <rect key="frame" x="0.0" y="0.0" width="225.33333333333334" height="30"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы отправили Вам код по СМС" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzB-f4-LxN">
+                            <rect key="frame" x="0.0" y="38" width="225.33333333333334" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" systemColor="systemGray2Color"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-oi-juG">
+                    <rect key="frame" x="92.333333333333329" y="382.66666666666669" width="208.66666666666669" height="21.666666666666686"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="срок истечёт через: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IC-dw-TIw">
+                            <rect key="frame" x="0.0" y="0.0" width="164.33333333333334" height="21.666666666666668"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcA-CU-ErS">
+                            <rect key="frame" x="164.33333333333337" y="0.0" width="44.333333333333343" height="21.666666666666668"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBY-BY-DXB">
+                    <rect key="frame" x="16" y="434.33333333333331" width="361" height="58"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="2mO-Vf-2b6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Далее">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="28"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="daleBtn:" destination="-1" eventType="touchUpInside" id="etn-cC-wdk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iS-kg-uDK">
+                    <rect key="frame" x="16" y="514.33333333333337" width="361" height="58"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Отправить ещё раз">
+                        <color key="titleColor" systemColor="systemBlueColor"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="28"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="daleBtn:" destination="-1" eventType="touchUpInside" id="W9t-gx-6JZ"/>
+                        <action selector="reSendBtn:" destination="-1" eventType="touchUpInside" id="8df-lA-It4"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZg-Q1-kYH" customClass="OTPFieldView" customModule="OTPFieldView">
+                    <rect key="frame" x="20" y="234.99999999999997" width="353" height="127.66666666666666"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5iS-kg-uDK" firstAttribute="height" secondItem="tBY-BY-DXB" secondAttribute="height" id="1EV-Io-Zm5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VZg-Q1-kYH" secondAttribute="trailing" constant="20" id="A2h-PW-RHh"/>
+                <constraint firstItem="VZg-Q1-kYH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Hsh-eX-C2X"/>
+                <constraint firstItem="GPj-oi-juG" firstAttribute="top" secondItem="VZg-Q1-kYH" secondAttribute="bottom" constant="20" id="Kry-q2-TZP"/>
+                <constraint firstItem="GPj-oi-juG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ObO-9V-2n4"/>
+                <constraint firstItem="tBY-BY-DXB" firstAttribute="top" secondItem="GPj-oi-juG" secondAttribute="bottom" constant="30" id="Pmf-LJ-CbA"/>
+                <constraint firstItem="tBY-BY-DXB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="USf-b9-OAb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tBY-BY-DXB" secondAttribute="trailing" constant="16" id="ZyU-is-nVp"/>
+                <constraint firstItem="GPj-oi-juG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ay5-Zj-dkm"/>
+                <constraint firstItem="5iS-kg-uDK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="czc-YR-q8i"/>
+                <constraint firstItem="b98-EQ-GyQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="iSP-ZS-MmC"/>
+                <constraint firstItem="b98-EQ-GyQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kJh-lt-e93"/>
+                <constraint firstItem="5iS-kg-uDK" firstAttribute="top" secondItem="tBY-BY-DXB" secondAttribute="bottom" constant="22" id="pRt-nU-KIB"/>
+                <constraint firstItem="VZg-Q1-kYH" firstAttribute="top" secondItem="b98-EQ-GyQ" secondAttribute="bottom" constant="40" id="vEQ-qg-Odp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5iS-kg-uDK" secondAttribute="trailing" constant="16" id="vFe-oY-efn"/>
+                <constraint firstItem="VZg-Q1-kYH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="wu7-PX-OaY"/>
+            </constraints>
+            <point key="canvasLocation" x="26.717557251908396" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
