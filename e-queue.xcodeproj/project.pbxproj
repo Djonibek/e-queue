@@ -10,7 +10,6 @@
 		044D2837297ED0A900FDB9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D2836297ED0A900FDB9E3 /* AppDelegate.swift */; };
 		044D2840297ED0AA00FDB9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044D283F297ED0AA00FDB9E3 /* Assets.xcassets */; };
 		044D2843297ED0AA00FDB9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044D2841297ED0AA00FDB9E3 /* LaunchScreen.storyboard */; };
-		33B6AA12297ED50C00189E9C /* jonibek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B6AA11297ED50C00189E9C /* jonibek.swift */; };
 		33B6AA19297ED63800189E9C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B6AA18297ED63800189E9C /* CustomView.swift */; };
 		FA8D9DDA297ED7DC0063471B /* ConfirmBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8D9DB2297ED7DB0063471B /* ConfirmBottomSheet.xib */; };
 		FA8D9DDB297ED7DC0063471B /* ConfirmBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D9DB3297ED7DB0063471B /* ConfirmBottomSheet.swift */; };
@@ -56,7 +55,6 @@
 		044D283F297ED0AA00FDB9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044D2842297ED0AA00FDB9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044D2844297ED0AA00FDB9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33B6AA11297ED50C00189E9C /* jonibek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = jonibek.swift; path = ../../../jonibek.swift; sourceTree = "<group>"; };
 		33B6AA18297ED63800189E9C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		FA8D9DB2297ED7DB0063471B /* ConfirmBottomSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmBottomSheet.xib; sourceTree = "<group>"; };
 		FA8D9DB3297ED7DB0063471B /* ConfirmBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBottomSheet.swift; sourceTree = "<group>"; };
@@ -126,31 +124,14 @@
 		044D2835297ED0A900FDB9E3 /* e-queue */ = {
 			isa = PBXGroup;
 			children = (
+				044D2836297ED0A900FDB9E3 /* AppDelegate.swift */,
 				FA8D9DB1297ED7950063471B /* Muslimbek */,
 				33B6AA17297ED5B100189E9C /* Javohirbek */,
-				044D284C297ED0D400FDB9E3 /* Bekzodbek */,
-				044D284B297ED0CF00FDB9E3 /* Jonibek */,
-				044D2836297ED0A900FDB9E3 /* AppDelegate.swift */,
 				044D283F297ED0AA00FDB9E3 /* Assets.xcassets */,
 				044D2841297ED0AA00FDB9E3 /* LaunchScreen.storyboard */,
 				044D2844297ED0AA00FDB9E3 /* Info.plist */,
 			);
 			path = "e-queue";
-			sourceTree = "<group>";
-		};
-		044D284B297ED0CF00FDB9E3 /* Jonibek */ = {
-			isa = PBXGroup;
-			children = (
-				33B6AA11297ED50C00189E9C /* jonibek.swift */,
-			);
-			path = Jonibek;
-			sourceTree = "<group>";
-		};
-		044D284C297ED0D400FDB9E3 /* Bekzodbek */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bekzodbek;
 			sourceTree = "<group>";
 		};
 		33B6AA17297ED5B100189E9C /* Javohirbek */ = {
@@ -329,7 +310,6 @@
 				FA8D9DED297ED7DD0063471B /* ConfirmView.swift in Sources */,
 				FA8D9DE6297ED7DC0063471B /* AllTicketsVC.swift in Sources */,
 				33B6AA19297ED63800189E9C /* CustomView.swift in Sources */,
-				33B6AA12297ED50C00189E9C /* jonibek.swift in Sources */,
 				FA8D9DF9297ED7DD0063471B /* TimeCell.swift in Sources */,
 				FA8D9DEB297ED7DD0063471B /* TicketView.swift in Sources */,
 				FA8D9DFA297ED7DD0063471B /* DayCell.swift in Sources */,

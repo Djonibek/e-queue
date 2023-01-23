@@ -15,8 +15,8 @@ class TabBarController: UITabBarController {
         viewControllers = [
             generateVC(vc: ServicesVC(nibName: "ServicesVC", bundle: nil),
                        image: UIImage(named: "home")),
-            generateVC(vc: ServicesVC(nibName: "ServicesVC", bundle: nil),
-                       image: UIImage(named: "search")),
+//            generateVC(vc: ServicesVC(nibName: "ServicesVC", bundle: nil),
+//                       image: UIImage(named: "search")),
             generateVC(vc: AllTicketsVC(nibName: "AllTicketsVC", bundle: nil),
                        image: UIImage(named: "bell")),
             generateVC(vc: ProfileVC(nibName: "ProfileVC", bundle: nil),
