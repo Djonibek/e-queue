@@ -52,6 +52,7 @@
 		044D2835297ED0A900FDB9E3 /* e-queue */ = {
 			isa = PBXGroup;
 			children = (
+				33B6AA17297ED5B100189E9C /* Javohirbek */,
 				044D284C297ED0D400FDB9E3 /* Bekzodbek */,
 				044D284B297ED0CF00FDB9E3 /* Jonibek */,
 				044D284A297ED0CA00FDB9E3 /* Muslimbek */,
@@ -83,6 +84,13 @@
 			children = (
 			);
 			path = Bekzodbek;
+			sourceTree = "<group>";
+		};
+		33B6AA17297ED5B100189E9C /* Javohirbek */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Javohirbek;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
