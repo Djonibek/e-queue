@@ -149,8 +149,8 @@
 		044D2835297ED0A900FDB9E3 /* e-queue */ = {
 			isa = PBXGroup;
 			children = (
-				7C2FED05297EDB2100E4564E /* Jonibek22 */,
 				044D2836297ED0A900FDB9E3 /* AppDelegate.swift */,
+				7C2FED05297EDB2100E4564E /* Jonibek22 */,
 				FA8D9DB1297ED7950063471B /* Muslimbek */,
 				33B6AA17297ED5B100189E9C /* Javohirbek */,
 				7C2FED0E297EDB4900E4564E /* Extensions.swift */,
