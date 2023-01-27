@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignInVC: UIViewController {
     
@@ -15,17 +16,18 @@ class SignInVC: UIViewController {
     
     @IBOutlet weak var PhoneNumberView: UIView!
     @IBOutlet weak var numberTF: UITextField!
-        override func viewDidLoad() {
+    
+    
+//    var loginData: LoginModel?
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         setupContanierView()
         validateTextField()
         
-            nextBtn.isEnabled = false
-        // in your viewDidLoad or viewWillAppear
-//        navigationItem.backBarButtonItem = UIBarButtonItem(
-//            title: "", style: .plain, target: nil, action: nil)
-
+//        nextBtn.isEnabled = false
     }
     
     func setupContanierView () {
@@ -45,12 +47,12 @@ class SignInVC: UIViewController {
     
     
     @IBAction func voytiBtn(_ sender: Any) {
-        let vc = VerificationCodeVC(nibName: "VerificationCodeVC", bundle: nil)
-        navigationController?.pushViewController(vc, animated: true)
+        //        let vc = VerificationCodeVC(nibName: "VerificationCodeVC", bundle: nil)
+        //        navigationController?.pushViewController(vc, animated: true)
         
+        let phoneNumberText = "+998" + numberTF.text!.replacingOccurrences(of: "-", with: "") // 942496636
         
-        
-        
+        singInApi(phoneNumber: phoneNumberText, password: passwordTF.text!)
     }
     
     @IBAction func zaregistrBtn(_ sender: Any) {
@@ -78,21 +80,60 @@ class SignInVC: UIViewController {
         }
         
     }
+    
     func validateTextField(){
         
         numberTF.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         passwordTF.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         
-        
     }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         if numberTF.text!.isEmpty || passwordTF.text!.isEmpty{
-               nextBtn.isEnabled = false
-           } else {
-               nextBtn.isEnabled = true
-           }
+            nextBtn.isEnabled = false
+        } else {
+            nextBtn.isEnabled = true
+        }
         
-       
+        
+    }
+    
+    
+    
+    func networkResult(loginModel: LoginDataModel) {
+        
+        let vc = TabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
+}
+
+// networking
+extension SignInVC {
+    func singInApi(phoneNumber: String, password: String) {
+        let stringUrl = "http://api.mobdev.uz/v1/user/login"
+        guard let url = URL(string: stringUrl) else { return }
+        
+        let param: [String: Any] = [
+            "phone_number": phoneNumber,
+            "password": password
+        ]
+        
+        AF.request(url, method: .post, parameters: param).responseDecodable(of: LoginModel.self) { response in
+            switch response.result {
+            case .success(let result):
+                debugPrint(result)
+                if let data =  result.data {
+                    self.networkResult(loginModel: data)
+                }else {
+                    print("login yoki parol xato")
+                }
+                
+            case .failure(let error):
+                print("Fatal error", error)
+            }
+        }
     }
 }
 
