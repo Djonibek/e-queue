@@ -25,35 +25,7 @@ class SignInVC: UIViewController {
         setupContanierView()
         validateTextField()
         
-        nextBtn.isEnabled = false
-        // in your viewDidLoad or viewWillAppear
-        //        navigationItem.backBarButtonItem = UIBarButtonItem(
-        //            title: "", style: .plain, target: nil, action: nil)
-        
-        dismissKeyboard()
-        
-    }
-
-        // 1
-    func activityIndicator(style: UIActivityIndicatorView.Style = .medium,
-                                       frame: CGRect? = nil,
-                                       center: CGPoint? = nil) -> UIActivityIndicatorView {
-        
-        // 2
-        let activityIndicatorView = UIActivityIndicatorView(style: style)
-        
-        // 3
-        if let frame = frame {
-            activityIndicatorView.frame = frame
-        }
-        
-        // 4
-        if let center = center {
-            activityIndicatorView.center = center
-        }
-        
-        // 5
-        return activityIndicatorView
+//        nextBtn.isEnabled = false
     }
     
     func setupContanierView () {
@@ -166,6 +138,44 @@ class SignInVC: UIViewController {
         }
         
         
+    }
+    
+    
+    
+    func networkResult(loginModel: LoginDataModel) {
+        
+        let vc = TabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
+}
+
+// networking
+extension SignInVC {
+    func singInApi(phoneNumber: String, password: String) {
+        let stringUrl = "http://api.mobdev.uz/v1/user/login"
+        guard let url = URL(string: stringUrl) else { return }
+        
+        let param: [String: Any] = [
+            "phone_number": phoneNumber,
+            "password": password
+        ]
+        
+        AF.request(url, method: .post, parameters: param).responseDecodable(of: LoginModel.self) { response in
+            switch response.result {
+            case .success(let result):
+                debugPrint(result)
+                if let data =  result.data {
+                    self.networkResult(loginModel: data)
+                }else {
+                    print("login yoki parol xato")
+                }
+                
+            case .failure(let error):
+                print("Fatal error", error)
+            }
+        }
     }
 }
 
