@@ -7,7 +7,7 @@
 
 import UIKit
 import OTPFieldView
-
+import Alamofire
 
 class VerificationCodeVC: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
@@ -17,14 +17,37 @@ class VerificationCodeVC: UIViewController {
     var countdownTimer: Timer!
     var totalTime = 59
 
+    var phoneNumber = ""
+    var password = ""
+    var otpString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         reSendBtn.layer.borderColor = UIColor.systemBlue.cgColor
         reSendBtn.layer.borderWidth = 1.5
         startTimer()
-       setupOtpFieldView()
+        setupOtpFieldView()
+        
+        print(phoneNumber, password)
     }
+    
+    //MARK: - IBActions
+    
+    @IBAction func daleBtn(_ sender: Any) {
+//        let tabbar = TabBarController()
+//        tabbar.modalPresentationStyle = .fullScreen
+//        self.present(tabbar, animated: true)
+        otpRequest()
+    }
+    
+    @IBAction func reSendBtn(_ sender: Any) {
+        endTimer()
+                totalTime = 59
+                startTimer()
+    }
+    
+    //MARK: - Functions
+    
     func setupOtpFieldView() -> Bool{
         self.otpFieldView.fieldsCount = 4
         self.otpFieldView.fieldBorderWidth = 0.3
@@ -48,15 +71,71 @@ class VerificationCodeVC: UIViewController {
         return true
     }
     
-    @IBAction func daleBtn(_ sender: Any) {
-        let tabbar = TabBarController()
-        tabbar.modalPresentationStyle = .fullScreen
-        self.present(tabbar, animated: true)
-    }
     func startTimer() {
            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
        }
+    
+    func otpRequest(){
+        
+        let stringUrl = "http://api.mobdev.uz/v1/user/sign-up-phone-confirm"
+        let url = URL(string: stringUrl)
+        
+       
+        let param: [String : Any] = [
+            "phone_number":"+998\(phoneNumber)",
+            "otp": otpString
+        ]
+        
+        //"password": passwordTF.text!
+        
+        AF.request(url!, method: .post, parameters: param).responseDecodable(of: OtpModel.self) { [self] response in
+            
+            switch response.result {
+            case .success(let result):
+                if let data = result.data {
+                    passwordConfirmRequest(tokenString: data.token)
+                } else {
+                    print("Error From Backend")
+                }
+            case .failure(let error):
+                print("Fatal Error OTP Request --- ", error)
+            }
+            
+        }
+    }
 
+    
+    func passwordConfirmRequest(tokenString: String){
+        
+        let stringUrl = "http://api.mobdev.uz/v1/user/create-password"
+        guard let url = URL(string: stringUrl) else { return }
+
+        let token: HTTPHeaders = [
+            "Authorization": "Bearer \(tokenString)"
+        ]
+        let param: [String : Any] = [
+                "password": password,
+                "password_confirm": password
+        ]
+        
+        AF.request(url, method: .post, parameters: param, headers: token).responseDecodable(of: PasswordConfirmModel.self) { response in
+            
+            switch response.result {
+            case .success(let result):
+                if let data = result.data {
+                    self.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    print("Error from Backend")
+                }
+            case .failure(let error):
+                print("Fatal error Password Request", error)
+            }
+        }
+                
+        
+    }
+    
+    //MARK: - @objc functions
     @objc func updateTime() {
            timerLabel.text = "\(timeFormatted(totalTime))"
 
@@ -78,11 +157,7 @@ class VerificationCodeVC: UIViewController {
            return String(format: "%02d:%02d", minutes, seconds)
        }
 
-    @IBAction func reSendBtn(_ sender: Any) {
-        endTimer()
-                totalTime = 59
-                startTimer()
-    }
+    
      
 }
 extension VerificationCodeVC: OTPFieldViewDelegate {
@@ -91,11 +166,14 @@ extension VerificationCodeVC: OTPFieldViewDelegate {
     }
     
     func enteredOTP(otp: String) {
+        otpString = otp
         print(otp)
     }
     
     func hasEnteredAllOTP(hasEnteredAll: Bool) -> Bool {
         print("Has entered Otp is \(hasEnteredAll)")
+        otpRequest()
+        print("otprequest")
         return false
     }
     

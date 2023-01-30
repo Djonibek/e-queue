@@ -22,6 +22,9 @@
 		7C2FED15297EDB4900E4564E /* RecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FED0C297EDB4900E4564E /* RecoveryPasswordVC.swift */; };
 		7C2FED16297EDB4900E4564E /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FED0D297EDB4900E4564E /* VerificationCodeVC.swift */; };
 		7C2FED17297EDB4900E4564E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FED0E297EDB4900E4564E /* Extensions.swift */; };
+		FA2EC0C82983FD2E00097C48 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC0C72983FD2E00097C48 /* SignupModel.swift */; };
+		FA2EC0EF29841BC000097C48 /* OtpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC0EE29841BC000097C48 /* OtpModel.swift */; };
+		FA2EC0F129841FCE00097C48 /* PasswordConfirmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EC0F029841FCE00097C48 /* PasswordConfirmModel.swift */; };
 		FA8D9DDA297ED7DC0063471B /* ConfirmBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8D9DB2297ED7DB0063471B /* ConfirmBottomSheet.xib */; };
 		FA8D9DDB297ED7DC0063471B /* ConfirmBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D9DB3297ED7DB0063471B /* ConfirmBottomSheet.swift */; };
 		FA8D9DDD297ED7DC0063471B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D9DB6297ED7DB0063471B /* ProfileVC.swift */; };
@@ -80,6 +83,9 @@
 		7C2FED0D297EDB4900E4564E /* VerificationCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
 		7C2FED0E297EDB4900E4564E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CF2159DEA068E04308D46D9B /* Pods-e-queue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-queue.release.xcconfig"; path = "Target Support Files/Pods-e-queue/Pods-e-queue.release.xcconfig"; sourceTree = "<group>"; };
+		FA2EC0C72983FD2E00097C48 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		FA2EC0EE29841BC000097C48 /* OtpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpModel.swift; sourceTree = "<group>"; };
+		FA2EC0F029841FCE00097C48 /* PasswordConfirmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmModel.swift; sourceTree = "<group>"; };
 		FA8D9DB2297ED7DB0063471B /* ConfirmBottomSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmBottomSheet.xib; sourceTree = "<group>"; };
 		FA8D9DB3297ED7DB0063471B /* ConfirmBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBottomSheet.swift; sourceTree = "<group>"; };
 		FA8D9DB6297ED7DB0063471B /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				04AB1CDA298174A300EF938C /* LoginModel.swift */,
+				FA2EC0C72983FD2E00097C48 /* SignupModel.swift */,
+				FA2EC0EE29841BC000097C48 /* OtpModel.swift */,
+				FA2EC0F029841FCE00097C48 /* PasswordConfirmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +439,7 @@
 				FA8D9DEE297ED7DD0063471B /* TabBarController.swift in Sources */,
 				FA8D9DED297ED7DD0063471B /* ConfirmView.swift in Sources */,
 				FA8D9DE6297ED7DC0063471B /* AllTicketsVC.swift in Sources */,
+				FA2EC0EF29841BC000097C48 /* OtpModel.swift in Sources */,
 				33B6AA19297ED63800189E9C /* CustomView.swift in Sources */,
 				FA8D9DF9297ED7DD0063471B /* TimeCell.swift in Sources */,
 				7C2FED15297EDB4900E4564E /* RecoveryPasswordVC.swift in Sources */,
@@ -443,11 +453,13 @@
 				FA8D9DE7297ED7DC0063471B /* TicketInfoVC.swift in Sources */,
 				FA8D9DF8297ED7DD0063471B /* SubcategoryTableViewCell.swift in Sources */,
 				FA8D9DE8297ED7DC0063471B /* SubcategoryVC.swift in Sources */,
+				FA2EC0C82983FD2E00097C48 /* SignupModel.swift in Sources */,
 				FA8D9DDB297ED7DC0063471B /* ConfirmBottomSheet.swift in Sources */,
 				FA8D9DFB297ED7DD0063471B /* SubcategoryColViewCell.swift in Sources */,
 				FA8D9DEC297ED7DD0063471B /* HeaderView.swift in Sources */,
 				FA8D9DFD297ED7DD0063471B /* OpenMapDirections.swift in Sources */,
 				FA8D9DF1297ED7DD0063471B /* TicketCell.swift in Sources */,
+				FA2EC0F129841FCE00097C48 /* PasswordConfirmModel.swift in Sources */,
 				FA8D9DF2297ED7DD0063471B /* ServiceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

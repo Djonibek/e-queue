@@ -7,6 +7,45 @@
 
 import Foundation
 import UIKit
+import Network
+
+extension UIViewController {
+    
+    func dismissKeyboard(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func endEditing(){
+        self.view.endEditing(true)
+    }
+    
+    func checkForNet(connected: (() -> Void)?, noconnection: (() ->Void)? = nil){
+        let monitor = NWPathMonitor()
+        monitor.start(queue: DispatchQueue(label: "NetworkMonitor"))
+        monitor.pathUpdateHandler = { (path) in
+            if path.status == .satisfied {
+                if let connected {
+                    connected()
+                }
+            } else {
+                let alert = UIAlertController(title: "No internet", message: "Check connection and try again!", preferredStyle: .alert)
+                let retry = UIAlertAction(title: "Retry", style: .default) { action in
+                    
+                }
+                alert.addAction(retry)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                }
+                print("no connection")
+                if let noconnection {
+                    noconnection()
+                }
+            }
+        }
+    }
+}
 
 extension String {
     var validate: Bool {

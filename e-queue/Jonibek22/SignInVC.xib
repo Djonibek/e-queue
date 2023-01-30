@@ -9,9 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInVC" customModule="electron_queue_system" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInVC" customModule="e_queue" customModuleProvider="target">
             <connections>
                 <outlet property="PhoneNumberView" destination="4nQ-fi-E9h" id="53a-W1-DZk"/>
+                <outlet property="loader" destination="kYE-Kg-Lwv" id="UaA-Pa-s6g"/>
                 <outlet property="nextBtn" destination="Qjy-q4-wR8" id="KCq-Gj-IP7"/>
                 <outlet property="numberTF" destination="qTZ-3D-MBN" id="Zkb-9z-hk7"/>
                 <outlet property="passwordTF" destination="ASO-49-WHi" id="Xjv-Di-Nvk"/>
@@ -151,6 +152,9 @@
                         </button>
                     </subviews>
                 </stackView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kYE-Kg-Lwv">
+                    <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -166,10 +170,12 @@
                 <constraint firstItem="zPQ-a0-5w5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UYr-Yo-Iz0"/>
                 <constraint firstItem="VKL-gi-E7d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="VWT-uu-gu8"/>
                 <constraint firstItem="4nQ-fi-E9h" firstAttribute="top" secondItem="VKL-gi-E7d" secondAttribute="bottom" constant="90" id="c9a-30-A5Y"/>
+                <constraint firstItem="kYE-Kg-Lwv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e1H-HI-UyE"/>
                 <constraint firstItem="gRO-Fs-R8v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e5p-7h-y5l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4nQ-fi-E9h" secondAttribute="trailing" constant="20" id="hBl-aH-Sji"/>
                 <constraint firstItem="zPQ-a0-5w5" firstAttribute="top" secondItem="4nQ-fi-E9h" secondAttribute="bottom" constant="40" id="iIX-5S-7cA"/>
                 <constraint firstItem="VKL-gi-E7d" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lfN-vJ-z4N"/>
+                <constraint firstItem="kYE-Kg-Lwv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ovK-Hw-tz7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gRO-Fs-R8v" secondAttribute="bottom" constant="29" id="qZR-ST-2V2"/>
             </constraints>
             <userDefinedRuntimeAttributes>

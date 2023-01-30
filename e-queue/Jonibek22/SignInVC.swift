@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignInVC: UIViewController {
     
@@ -15,17 +16,44 @@ class SignInVC: UIViewController {
     
     @IBOutlet weak var PhoneNumberView: UIView!
     @IBOutlet weak var numberTF: UITextField!
-        override func viewDidLoad() {
+    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         setupContanierView()
         validateTextField()
         
-            nextBtn.isEnabled = false
+        nextBtn.isEnabled = false
         // in your viewDidLoad or viewWillAppear
-//        navigationItem.backBarButtonItem = UIBarButtonItem(
-//            title: "", style: .plain, target: nil, action: nil)
+        //        navigationItem.backBarButtonItem = UIBarButtonItem(
+        //            title: "", style: .plain, target: nil, action: nil)
+        
+        dismissKeyboard()
+        
+    }
 
+        // 1
+    func activityIndicator(style: UIActivityIndicatorView.Style = .medium,
+                                       frame: CGRect? = nil,
+                                       center: CGPoint? = nil) -> UIActivityIndicatorView {
+        
+        // 2
+        let activityIndicatorView = UIActivityIndicatorView(style: style)
+        
+        // 3
+        if let frame = frame {
+            activityIndicatorView.frame = frame
+        }
+        
+        // 4
+        if let center = center {
+            activityIndicatorView.center = center
+        }
+        
+        // 5
+        return activityIndicatorView
     }
     
     func setupContanierView () {
@@ -41,16 +69,20 @@ class SignInVC: UIViewController {
         passwordView.layer.borderWidth = 0.5
         passwordView.layer.borderColor = UIColor.systemBlue.cgColor
         passwordView.layer.cornerRadius = 28
+        
     }
     
+    //MARK: - IBAction functions
     
     @IBAction func voytiBtn(_ sender: Any) {
-        let vc = VerificationCodeVC(nibName: "VerificationCodeVC", bundle: nil)
-        navigationController?.pushViewController(vc, animated: true)
         
-        
-        
-        
+        checkForNet(connected: {
+            self.loginRequest()
+        },
+                    noconnection: {})
+        //        let vc = VerificationCodeVC(nibName: "VerificationCodeVC", bundle: nil)
+        //        navigationController?.pushViewController(vc, animated: true)
+        loader.startAnimating()
     }
     
     @IBAction func zaregistrBtn(_ sender: Any) {
@@ -78,21 +110,62 @@ class SignInVC: UIViewController {
         }
         
     }
+    
+    //MARK: - Functions
     func validateTextField(){
         
         numberTF.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         passwordTF.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        
-        
     }
+    
+    func loginRequest(){
+        
+        let stringUrl = "http://api.mobdev.uz/v1/user/login"
+        let url = URL(string: stringUrl)
+        
+        let phoneNumber: String = (numberTF.text?.replacingOccurrences(of: "-", with: ""))!
+        
+        let param: [String : Any] = [
+            "phone_number": "+998\(phoneNumber)",
+            "password": passwordTF.text!
+        ]
+        
+        AF.request(url!, method: .post, parameters: param).responseDecodable(of: LoginModel.self) { response in
+            self.loader.stopAnimating()
+            switch response.result {
+                
+                
+            case .success(let result):
+                
+                if let _ = result.data {
+                    print("Next")
+                    
+                    let tabBar = TabBarController()
+                    tabBar.modalPresentationStyle = .fullScreen
+                    self.present(tabBar, animated: true)
+                    
+                } else {
+                    print(result.errors!)
+                }
+                
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    //MARK: - @objc functions
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         if numberTF.text!.isEmpty || passwordTF.text!.isEmpty{
-               nextBtn.isEnabled = false
-           } else {
-               nextBtn.isEnabled = true
-           }
+            nextBtn.isEnabled = false
+        } else {
+            nextBtn.isEnabled = true
+        }
         
-       
+        
     }
 }
 
